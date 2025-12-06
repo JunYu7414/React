@@ -12,6 +12,7 @@ function App() {
           <p>hello world</p>
         </div>
         <Text />
+        <Text />
       </>
   )
 }
