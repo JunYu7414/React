@@ -8,16 +8,16 @@ import Home from './pages/Home';
 function App() {
   // JSX to be rendered
   const movieNumber = 1;
-  
+
   return (
 //Fragment to avoid extra divs
       <>
-        <Home />
           {/* Example of conditional rendering: */}
           {movieNumber === 1 ? (<MovieCard movie={{title: "Inception", release_date: "2024"}} />) 
           : (<MovieCard movie={{title: "The Dark Knight", release_date: "2008"}} />)}
 
           {movieNumber === 2 && (<MovieCard movie={{title: "Interstellar", release_date: "2014"}} />)}
+          <Home />
       </>
   )
 }
