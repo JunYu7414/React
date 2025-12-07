@@ -12,7 +12,7 @@ function App() {
           <p>hello world</p>
         </div>
         <Text />
-        <Text />
+        <Text display={"whats up"}/>
         <Text />
         <Text />
         <Text />
@@ -20,13 +20,13 @@ function App() {
   )
 }
 
-//Component
-function Text() {
-  return (
-    <div>
-        <p>hello world</p>
-    </div>  
-  );
-}
+//Component and property
+// function Text({display}) {
+//   return (
+//     <div>
+//         <p>{display}</p>
+//     </div>  
+//   );
+// }
 
 export default App
