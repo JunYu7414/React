@@ -6,6 +6,7 @@ function Home() {
     //Set the state and the function to update it //Set the default value
     //Define state which will store what the user types in the search bar and use it later
     //Every time the user types something new, setSearchQuery will update the searchQuery state and re-render the component
+    //Make sure to define the state inside the component function
     const [searchQuery, setSearchQuery] = useState(""); 
     // Array of movie objects
     const movies = [
@@ -37,8 +38,8 @@ function Home() {
             <div className="movies-grid">
                 {/* // .map iterates through each movie in the movies array */}
                 {movies.map(movie => 
-                    (<MovieCard movie={movie} key={movie.id}/>
-                ))}
+                    <MovieCard movie={movie} key={movie.id}/>
+                )}
             </div>
         </div>
     )
