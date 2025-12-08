@@ -37,7 +37,7 @@ function Home() {
             </form>
             <div className="movies-grid">
                 {/* // .map iterates through each movie in the movies array */}
-                {movies.map(movie => 
+                {movies.map((movie) => 
                     <MovieCard movie={movie} key={movie.id}/>
                 )}
             </div>
