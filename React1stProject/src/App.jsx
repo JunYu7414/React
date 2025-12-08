@@ -2,24 +2,25 @@
 import './App.css'
 import MovieCard from './components/MovieCard';
 import Home from './pages/Home';
+import {Routes, Route} from 'react-router-dom';
+import Favourite from './pages/Favourites';
+import NavBar from './components/NavBar';
 
-// Main App component
-//Always start with a capital letter
 function App() {
-  // JSX to be rendered
-  const movieNumber = 1;
 
   return (
-//Fragment to avoid extra divs
-      <>
-          {/* Example of conditional rendering: */}
-          {movieNumber === 1 ? (<MovieCard movie={{title: "Inception", release_date: "2024"}} />) 
-          : (<MovieCard movie={{title: "The Dark Knight", release_date: "2008"}} />)}
-
-          {movieNumber === 2 && (<MovieCard movie={{title: "Interstellar", release_date: "2014"}} />)}
-          <Home />
-      </>
-  )
+    <div>
+      <NavBar />
+      <main className='main-content'>
+        <Routes>
+          {/* // Define routes for Home and Favourites pages */}
+          {/* //Element to display component when route matches */}
+          <Route path='/' element={<Home />}/>
+          <Route path='/Favourites' element={<Favourite />}/>
+        </Routes>
+      </main>
+    </div>
+  );
 }
 
 //Component and property
