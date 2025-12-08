@@ -37,9 +37,23 @@ function Home() {
     }, [])
 
 
-    const handleSearch = (e) => {
+    const handleSearch = async (e) => {
         e.preventDefault(); // Prevent the default form submission behavior
-        setSearchQuery("-------");
+
+        if (!searchQuery.trim()) return; // If the search query is empty, do nothing
+        if (loading) return; // If already loading, do nothing
+
+        setLoading(true);
+        try {
+            const searchResults = await searchMovies(searchQuery);
+            setMovies(searchResults);
+            setError(null); // Clear any previous errors
+        }catch (error) {
+            console.log(error);
+            setError("Failed to search movies...");
+        } finally {
+            setLoading(false);
+        }
     }
 
     return (
@@ -61,6 +75,7 @@ function Home() {
             {/* Example of conditional rendering with && */}
             {error && <div className='error-message'>{error}</div>}
 
+            // If loading is true, show loading message, else show movies grid
             {loading ? <div>Loading...</div> : 
             <div className="movies-grid">
                 {/* // .map iterates through each movie in the movies array */}
