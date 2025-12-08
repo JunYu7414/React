@@ -9,7 +9,7 @@ function MovieCard({movie}) {
     return <div className="movie-card">
         <div className="movie-poster">
             {/* Put as variable */}
-            <img src={movie.url} alt={movie.title}></img>
+            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}></img>
             <div className="movie-overlay">
                 <button className="favorite-btn" onClick={onFavoriteClick}>
                     ♥
@@ -18,7 +18,8 @@ function MovieCard({movie}) {
         </div>
         <div className="movie-info">
             <h3>{movie.title}</h3>
-            <p>{movie.release_date}</p>
+            {/* //split the release date string at the hyphen and get the first part (year) */}
+            <p>{movie.release_date?.split("-"[0])}</p>
         </div>
     </div>
 }
