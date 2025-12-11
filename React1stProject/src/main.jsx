@@ -12,6 +12,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* // BrowserRouter to enable routing in the app */}
     <BrowserRouter>
+    {/* //Example of children   */}
       <App />
     </BrowserRouter>
   </StrictMode>

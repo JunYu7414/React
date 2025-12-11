@@ -23,6 +23,7 @@ function Home() {
         const loadPopularMovies = async () => {
             try {
                 const popularMovies = await getPopularMovies();
+                console.log(popularMovies);
                 setMovies(popularMovies);
             } catch (error) {
                 console.log(error);
@@ -34,6 +35,7 @@ function Home() {
         }
 
         loadPopularMovies();
+        
     }, [])
 
 
@@ -54,6 +56,8 @@ function Home() {
         } finally {
             setLoading(false);
         }
+
+        setSearchQuery(""); // Clear the search input after searching
     }
 
     return (
@@ -75,7 +79,7 @@ function Home() {
             {/* Example of conditional rendering with && */}
             {error && <div className='error-message'>{error}</div>}
 
-            // If loading is true, show loading message, else show movies grid
+            {/* // If loading is true, show loading message, else show movies grid */}
             {loading ? <div>Loading...</div> : 
             <div className="movies-grid">
                 {/* // .map iterates through each movie in the movies array */}
