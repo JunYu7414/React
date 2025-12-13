@@ -1,0 +1,26 @@
+.navbar {
+    background-color: black;
+    display: flex;
+    flex: 1;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar-links {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.navbar-link:hover {
+    text-decoration: underline;
+}
